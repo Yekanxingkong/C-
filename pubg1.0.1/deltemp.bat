@@ -28,6 +28,8 @@ del /q /A-S C:\Users\%username%\AppData\Local\Temp
 
 del /q /A-S C:\Windows\Temp 
 
+del /q /s /A-S C:\Users\ADMINI~1\AppData\Local\Temp
+
 taskkill /f /im cmd.exe
 
 exit
