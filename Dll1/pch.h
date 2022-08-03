@@ -33,6 +33,8 @@ extern "C"
 {
     _declspec(dllexport) int myAdd(int n, int m);
     _declspec(dllexport) int mySub(int n, int m);
+    _declspec(dllexport) char* rand_str_A(char* str, int len);
+    _declspec(dllexport) char* rand_str_math(char* str, int len);
 };
 
 #endif //PCH_H
