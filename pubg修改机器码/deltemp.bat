@@ -59,6 +59,7 @@ rmdir /q /s C:\Users\%username%\AppData\Local\Qingfeng
 rmdir /q /s C:\Users\%username%\AppData\Local\UnrealEngine
 rmdir /q /s H:\steam\steamapps\common\PUBG\TslGame\Binaries\ThirdParty\BroCrashReporter\L10N
 rmdir /q /s H:\steam\userdata
+rmdir /q /s H:\steam\logs
 echo 把前面的echo删掉就是清理命令rmdir /q /s 空格一下跟绝对路径
 echo -------------个人系统的缓存和残留--------------------------
 
