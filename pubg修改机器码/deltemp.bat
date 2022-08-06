@@ -15,7 +15,7 @@ start %windir%\system32\sfc.exe
 start %windir%\system32\defrag.exe
 
 echo 计算机日志
-del /q /s /A-S C:\Windows\Temp
+del /q /s /A-S C:\Windows\Temp\*.*
 echo 蓝屏文件
 del /q /s /A-S C:\Windows\LiveKernelReports\WATCHDOG
 echo 人机日志
@@ -27,18 +27,17 @@ del /q /s /A-S C:\Windows\debug
 echo 计划程序启动记录
 del /q /s /A-S C:\Windows\Tasks
 echo 用户日志
-del /q /s /A-S C:\Users\ADMINI~1\AppData\Local\Temp
-rmdir /q /s C:\Users\ADMINI~1\AppData\Local\Temp
+del /q /s /A-S C:\Users\ADMINI~1\AppData\Local\Temp\*.*
 echo 程序点击记录
-del /q /s /A-S C:\Users\ADMINI~1\Recent
+del /q /s /A-S C:\Users\ADMINI~1\Recent\*.*
 echo 网络操作记录
-del /q /s /A-S C:\Users\ADMINI~1\Local Settings
+del /q /s /A-S C:\Users\ADMINI~1\Local Settings\*.*
 echo 系统磁盘操作记录
 del /q /s /A-S C:\Users\ADMINI~1\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations
 echo 个人磁盘操作记录
 del /q /s /A-S C:\Users\ADMINI~1\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations
 echo 个人操作记录
-del /q /s /A-S C:\Users\ADMINI~1\AppData\Roaming\Microsoft\Windows\Recent
+del /q /s /A-S C:\Users\ADMINI~1\AppData\Roaming\Microsoft\Windows\Recent\*.*
 echo 清空回收站
 rd /q /s C:$Recycle.Bin
 echo 正在清除系统临时文件 *.tmp *._tmp *.log *.chk *.old ，请稍等... 
@@ -54,9 +53,17 @@ rmdir /q /s C:\Users\%username%\AppData\Local\Mozilla\Firefox\Profiles\ua23w2he.
 \cache2\entries
 rmdir /q /s C:\Users\%username%\AppData\Local\Mozilla\Firefox\Profiles\ua23w2he.default-release
 \thumbnails
-rmdir /q /s C:\Users\%username%\AppData\Local\BattlEye
+rmdir /q /s C:\Users\%username%\AppData\Local\bitwarden-updater
 rmdir /q /s C:\Users\%username%\AppData\Local\Qingfeng
 rmdir /q /s C:\Users\%username%\AppData\Local\UnrealEngine
+rmdir /q /s C:\Users\%username%\AppData\Local\BlueStacks X
+rmdir /q /s C:\Users\%username%\AppData\Local\cache
+rmdir /q /s C:\Users\%username%\AppData\Local\CrashDumps
+rmdir /q /s C:\Users\%username%\AppData\Local\CrashRpt
+rmdir /q /s C:\Users\%username%\AppData\Local\ElevatedDiagnostics
+rmdir /q /s C:\Users\%username%\AppData\Local\FTMod
+rmdir /q /s C:\Users\%username%\AppData\Local\Mindjet
+rmdir /q /s C:\Users\%username%\AppData\Local\SalSoft
 rmdir /q /s H:\steam\steamapps\common\PUBG\TslGame\Binaries\ThirdParty\BroCrashReporter\L10N
 rmdir /q /s H:\steam\userdata
 rmdir /q /s H:\steam\logs
