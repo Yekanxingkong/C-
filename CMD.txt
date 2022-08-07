@@ -1,0 +1,17 @@
+
+开启 start
+
+管理员权限
+>NUL 2>&1 REG.exe query "HKU\S-1-5-19" || (
+    ECHO SET UAC = CreateObject^("Shell.Application"^) > "%TEMP%\GetAdmin.vbs"
+    ECHO UAC.ShellExecute "%~f0", "%1", "", "runas", 1 >> "%TEMP%\GetAdmin.vbs"
+    "%TEMP%\GetAdmin.vbs"
+    DEL /f /q "%TEMP%\GetAdmin.vbs" 2>NUL
+    Exit /b
+)
+文件取消隐藏属性attrib -h -r -s /s /d F:\*.*
+
+关闭进程taskkill /f /im 
+
+删除注册表 reg delete “**” /f不提醒 /va删除项值
+删除某个项值reg delete “**” /v 项值 | /ve | /va [ /f]
