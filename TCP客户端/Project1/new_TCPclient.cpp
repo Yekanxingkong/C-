@@ -81,10 +81,11 @@ bool receiveDataC(SOCKET& clientSock, string& data)
 
 int TCP_client()
 {
-	SOCKET clientSock;	// 客户端Socket
 	string data;
 	string str;
-	if (initWinSockC() == TRUE && createSocketC(clientSock) == TRUE && connectSocketC(clientSock, "127.0.0.1", 1994) == TRUE) {
+
+	SOCKET clientSock;	// 客户端Socket
+	if (initWinSockC() == TRUE && createSocketC(clientSock) == TRUE && connectSocketC(clientSock, "180.113.42.26", 1994) == TRUE) {
 		//cout << "服务器连接成功" << endl;
 		receiveDataC(clientSock, data);//接收服务器数据
 		cout <<  data << endl;
