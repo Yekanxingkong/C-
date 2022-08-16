@@ -217,12 +217,13 @@ int main()
 				_getcwd(buff, 250);
 				strcat_s(buff, "\\cdksqlpythony.py");
 				fund(buff);
-				int a = 0;
-				while (a < 10000)
-				{
-					a++;
-				}
+				Sleep(3000);
+				//int a = 0;
+				//do { a++; } while (a < 120000);
 				if (if_resultle("\\cdk.op") == 0) {
+					_getcwd(buff, 250);
+					strcat_s(buff, "\\cdk.tap");
+					remove(buff);
 					sendData(clientSock, "succeed");//发送成功代码
 					closesocket(listenScok);
 					closesocket(clientSock);
@@ -234,6 +235,9 @@ int main()
 				debug = "字符长度超标，不予判断";
 			}
 		}
+		_getcwd(buff, 250);
+		strcat_s(buff, "\\cdk.op");
+		remove(buff);
 		sendData(clientSock, "Server close");
 	}
 	else {

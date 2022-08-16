@@ -1,4 +1,4 @@
-import os,sys
+﻿import os,sys
 try:
     import platform
     import pymysql
@@ -142,8 +142,12 @@ def into_cdk():
 def main():
     buff= os.getcwd()
     file = open(buff +'\\cdk.tap', 'r')
-    cdk = file.readline()
+    cdk = file.read()
     file.close()
+    cdk = cdk.rstrip()
+    cdk = cdk.strip('\n')
+    #print(repr(cdk))
+    os.remove(buff +'\\cdk.tap')
     try:
         hosturl,youruesnames,yourpassword,SQLname,customers = "192.168.2.175","root","123456","CDK","PUBGcdk"
         if(New_db(hosturl,youruesnames,yourpassword,SQLname) == 1):
@@ -169,17 +173,17 @@ def main():
     Sqlcommand = "SELECT 序号 FROM " + customers + " WHERE PUBG_CKD='" + cdk + "' AND 状态='Ture'"
     mycursor.execute(Sqlcommand)
     for (x,) in mycursor:
-        print(x)
+        #print(x,cdk)
         for loopA in range(500):
             if(int(x) == loopA):
-                print(x)
                 sql_revise = "UPDATE " + customers + " SET 状态 = 'Flase' WHERE PUBG_CKD = '" + cdk + "' "
                 mycursor.execute(sql_revise)
                 mydb.commit()
-                file = open(buff + '/cdk.op', 'a')
+                file = open(os.getcwd() + '\\cdk.op', 'w+')
                 file.close()
             else:
                 pass
+
     return 0
 
 if __name__ == '__main__':
