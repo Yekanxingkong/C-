@@ -1,4 +1,0 @@
-﻿  new_TCPserver.cpp
-E:\Project2\Project2\new_TCPserver.cpp(151,57): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-E:\Project2\Project2\new_TCPserver.cpp(188): warning C4715: “JTCPserver”: 不是所有的控件路径都返回值
-  Project2.vcxproj -> E:\Project2\x64\Debug\Project2.exe
