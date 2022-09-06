@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Administrator\Desktop\window机器码修改_4.2.8\客户端源码\main.cpp(18,17): warning C4101: “buffer”: 未引用的局部变量
+C:\Users\Administrator\Desktop\window机器码修改_4.2.8\客户端源码\main.cpp(76,17): warning C4101: “buffer”: 未引用的局部变量
+  客户端源码.vcxproj -> C:\Users\Administrator\Desktop\window机器码修改_4.2.8\客户端源码\x64\Debug\客户端源码.exe
