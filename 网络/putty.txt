@@ -1,0 +1,70 @@
+1.远程登录。本地登录到远程
+
+putty.exe  -ssh -l  root  -pw  password  -P  22  192.168.2.1
+
+- ssh:登录协议
+
+-l   user：登录用户名
+
+-pw  password：登录密码
+
+127.0.0.1：目标地址
+
+-P    2222：指定登录接口（可选）
+
+-m  exe.txt：登录后，指定的执行脚本（可选）
+
+
+2.登录后如可从对远程进行操作。
+
+把需要操作的命令（内容）写入到exe.txt中
+
+列：exe.txt的内容如下：
+
+cd test
+
+./test.sh
+
+exit
+
+即：进入test目录下，执行test.sh脚本，再退出登录。
+
+ 
+
+3.一般把上述过程写在本地的脚本中。执行本地脚本即可。
+
+注意：exe.txt和本地脚本在同一目录下。
+
+ 
+
+4.以下是putty命令行参数的扩展阅读。
+
+http://blog.csdn.net/five3/article/details/8115120
+
+
+ -V        print version information and exit
+ -pgpfp    print PGP key fingerprints and exit
+ -v        show verbose messages
+ -load sessname  Load settings from saved session
+ -ssh -telnet -rlogin -raw            force use of a particular protocol
+ -P port   connect to specified port
+ -l user   connect with specified username
+ -batch    disable all interactive prompts The following options only apply to SSH connections:  -pw passw login with specified password
+ -D [listen-IP:]listen-port           Dynamic SOCKS-based port forwarding
+ -L [listen-IP:]listen-port:host:port            Forward local port to remote address
+ -R [listen-IP:]listen-port:host:port            Forward remote port to local address
+ -X -x     enable / disable X11 forwarding
+-A -a     enable / disable agent forwarding
+ -t -T     enable / disable pty allocation
+-1 -2     force use of particular protocol version
+-4 -6     force use of IPv4 or IPv6
+ -C        enable compression
+-i key    private key file for authentication
+ -m file   read remote command(s) from file
+ -s        remote command is an SSH subsystem (SSH-2 only)
+ -N        don't start a shell/command (SSH-2 only)
+
+自动登录后执行默认的命令：
+putty [-pw password] [-m file] user@ip_addr
+主要在于-m参数，其后面跟着的是当前目录下存在的一个shell脚本，记住了不是在【远程】的计算上，而是在putty程序的相同目录中
+
