@@ -1,5 +1,5 @@
 ﻿  NameTermainateprocess.cpp
 E:\Nametermainateprocess\NameTermainateprocess.cpp(17,34): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 E:\Nametermainateprocess\NameTermainateprocess.cpp(31,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-E:\Nametermainateprocess\NameTermainateprocess.cpp(63,18): warning C4101: “debug”: 未引用的局部变量
+E:\Nametermainateprocess\NameTermainateprocess.cpp(64,18): warning C4101: “debug”: 未引用的局部变量
   Nametermainateprocess.vcxproj -> E:\Nametermainateprocess\x64\Debug\Nametermainateprocess.exe

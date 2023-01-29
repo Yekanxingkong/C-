@@ -1,0 +1,6 @@
+﻿  dllmain.cpp
+E:\Nametermainateprocessdll\dllmain.cpp(20,34): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\Nametermainateprocessdll\dllmain.cpp(34,27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\Nametermainateprocessdll\dllmain.cpp(66,18): warning C4101: “debug”: 未引用的局部变量
+    正在创建库 E:\Nametermainateprocessdll\x64\Debug\Nametermainateprocessdll.lib 和对象 E:\Nametermainateprocessdll\x64\Debug\Nametermainateprocessdll.exp
+  Nametermainateprocessdll.vcxproj -> E:\Nametermainateprocessdll\x64\Debug\Nametermainateprocessdll.dll

@@ -42,7 +42,7 @@ TCHAR* char2tchar(char* str)
 * GetProcessIDByName(char2tchar(e));
 ***********************************************************************
 */
-ULONG GetProcessIDByName(TCHAR* ProcessName)
+ULONG GetProcessIDByNameA(TCHAR* ProcessName)
 {
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     //拍摄进程的快照，取自头文件tlhelp32.h
@@ -55,8 +55,9 @@ ULONG GetProcessIDByName(TCHAR* ProcessName)
     //在调用 Process32First函数之前，将此成员设置为sizeof(PROCESSENTRY32). 如果您不初始化dwSize， Process32First将失败。
     for (BOOL ret = Process32First(hSnapshot, &tagPROCESSENTRY32); ret; ret = Process32Next(hSnapshot, &tagPROCESSENTRY32)) {
         CString e = ProcessName;//atlstr.h
-        if (tagPROCESSENTRY32.szExeFile == ProcessName) {//取进程的名称
+        if (tagPROCESSENTRY32.szExeFile == e) {//取进程的名称
             CloseHandle(hSnapshot);//释放内存，关闭快照
+            
             return tagPROCESSENTRY32.th32ProcessID;//返回进程的PID
         }
         else {
@@ -67,7 +68,14 @@ ULONG GetProcessIDByName(TCHAR* ProcessName)
     CloseHandle(hSnapshot);
     return 0;
 }
-int main() {
+int GetProcessIDByName(string str) {
+    char* c = const_cast<char*>(str.c_str());
+    return GetProcessIDByNameA(char2tchar(c));
+}
 
+
+
+int main() {
+    cout<<GetProcessIDByName("notepad.exe")<<endl;
     return 0;
 }
